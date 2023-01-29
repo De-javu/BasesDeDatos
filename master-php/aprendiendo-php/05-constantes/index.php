@@ -1,6 +1,13 @@
 <?php
 
 /*
+FUNCIONES UTILIZADAS:
+define = permite definir una cosntante con una exprecon arbitraria 
+echo = permiete imprimir por pnatalla
+
+*/
+
+/*
 COSTANTES
 Es un contenedor de informacion que no puede variar.
 */

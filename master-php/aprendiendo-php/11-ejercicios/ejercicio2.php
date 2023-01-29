@@ -1,7 +1,13 @@
 <?php
 /*
-Ejercicio numero 2, Escrivir un codigo en PHP que nos muestre por pantalla los 
+Ejercicio numero 2, Escribir un codigo en PHP que nos muestre por pantalla los 
 numeros pares del 1 al 100.
+
+FUNCIONES UTILIZADAS:
+
+$= Nos permite definir un variable
+echo = lo utilizamos para imprimir por pantalla
+for = permite repetir un bloque de indtrucciones las veces que sea necesario.
 */
 
 $numero = 2;

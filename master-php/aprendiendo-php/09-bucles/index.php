@@ -7,6 +7,16 @@ while(condicion){
     bloque de isntrucciones
     otra instruccion
 }
+
+FUNCIONES UTILIZADAS:
+
+$ = Se utiliza para definir un variable
+echo = <nos permite imprimir por pantallas
+hr = nos permite dar espacio o separrar la visualizacion 
+$_GET = Nos permite ingresar parametros desde la URL o desde formulario  enviados con el 
+        metodo GET
+br = Lo utilizamos para dar un salto de linea entre la visualizacion.
+
 */
 
 $numero = 0;

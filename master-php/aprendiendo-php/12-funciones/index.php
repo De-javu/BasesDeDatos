@@ -5,7 +5,22 @@ y que puede utilizarse solamente invocando a la funcion tanta veces como se dese
 
 funtion nombreDeMiFuncion($parametro) {
 
-}
+FUNCIONES UTLIZADAS:
+
+funtion = una funcion es un conjunto de instrucciones agrupadas bajo un nombre concreto
+          y que puede utilizarse solamente invocando a la funcion tanta veces como se desee.
+echo = No spermite imprimir por pantalla
+$ = la utilizamos para definr variables
+h3 = permite crear texto como tittulos en este caso categoria 3
+hr = Nos permite realizar en la pantalla de impresion una visualizacion separada y mas ordenada 
+for = permite repetir un bloque de instrucciones las veces que sea necesario.
+$GET_ = Nos permite ingresar parametros desde la URL o desde formulario  enviados con el 
+        metodo GET
+isset = Determina si una variable a sido declarada y su valor no es NULO
+tabla = Es ub conjunto de celdas 
+if = condicional cumle o no cumple
+else = condicional que entra a ser evaluado si id no se ejecuta
+br = salto de linea
 */
 
 //EJEMPLO # 1

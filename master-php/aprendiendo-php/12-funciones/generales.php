@@ -1,4 +1,27 @@
 <?php
+
+/*
+FUNCIONES UTILIZADAS:
+$ = Se utiliza para definir una variable
+echo = NOs permite imprimir por pantall 
+gettype = Se utliza para determinar si una variables es de un tipo o de otro
+br = Permite realizar saltos entre lines
+is_string = Comprueba si una variable es de tipo string o no.
+hr = Genrea una separacion entre secciones del contenido
+!is_float = Determina si el tiepo de variable es un un float
+isset = Permite evaluar si la variable fue declara y que el valor no sea nulo
+trim = Elimina espacios en blanco al inicio y al final de una cadena 
+unset = Se utiliza para eliminar una o varias variables
+empty = Se utiliza para determinar si una variable esta vacia
+trim = Quita espacios al inicio y al final de un cadena 
+strlen = Se utiliza para obtener la longitud de un cadena y devulve el dato en numero 
+strpos = Devulve la posicion de la primera concidencia de la palabra o caracter buscado en
+         una cadena de texto
+str_replace = Se utiliza para buscar y remplazar cadena y caracteres dentro de in string
+strtolower = convierte a miniscula 
+strtoupper = convierte a mayuscula 
+*/
+
 // Otras funciones generales predefinidas
 
 $nombre = "Andres Pardo";

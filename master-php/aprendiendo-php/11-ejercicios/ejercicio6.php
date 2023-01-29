@@ -3,6 +3,18 @@
 /*
 EJERCICIO # 6:
 Mostrar en pantalla  una tabla HTML con las tablas de multiplicar del 1 al 10.
+
+FUNCIONES UTILIZADAS:
+
+$ = Nos permite definir variables
+echo = Se utiliza para imprimir por pantalla
+table border = Indica el ancho de los bordes de la tabla, se mide en pixeles
+tr = Nos permite definir cada una de las filas que conforman la tabla 
+td = Nos permite definir la columnas que conforman la tabla 
+for = Permite repetir un bloque de instrucciones las veces que sea necesario.
+
+
+
 */
 
 echo "<table border='1'> <tr>"; // inicio de la tabla 

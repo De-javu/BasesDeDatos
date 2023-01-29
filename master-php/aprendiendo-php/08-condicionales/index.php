@@ -31,6 +31,24 @@ OPERADORES LOGICOS
 AND,OR 
 
 */ 
+/*
+FUNCIONES UTILIZADAS:
+$ =  Se utiliza para definir variables
+if = Se uriliza para definir una condicion 
+else = se utiliza para definir una condicion diferentea a la propusta en el if
+echo = se utiliza para imprimir por pantalla
+br = se utiliza para hacer salto de lines
+hr = Permite realizar cambio de contenidos diferentes en la visualizacion 
+elseif = Pueden  aver varios elsei dentro de una misma sentencia if , si alguna que
+         se evalue como TRUE sera ejecutada 
+switch = Es similar a la sentencia if, permite comparar varibles y ejecuta la parte 
+         del codigo dependiendo de q valor sea igual
+case = permiete evaluar tanto numero como cadenas de texto o valores voleanos 
+break = Se utiliza para indicar cuantas estrucutras anidadas para salir, 
+default = Es la ultima instruccion que se ejecuta, por lo que esta remplazaria un breack
+goto = Se utiliza para saltar a otra seccion del programa 
+
+*/
 
 // EJEMPLO #1
 
@@ -160,7 +178,7 @@ if($pais == "Mexico" || $pais == "Colombia" || $pais == "España"){
 }
 
 //OPERADOR GOTO
-// funciona para saltar las lineas de codigo que q  ueremos poner entre el goto y las linea que queremos que se ejecute
+// funciona para saltar las lineas de codigo que q  qeremos poner entre el goto y las linea que queremos que se ejecute
 // la marca puede tener el nombre que se desee.
 //EJEMPLO
 goto Marca;

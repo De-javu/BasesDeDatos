@@ -1,6 +1,11 @@
 <?php
+/*
+FUNCIONES UTILIZADAS:
 
-
+$= SE utiliza para definir una variable
+echo = nos permite imprimir por pantalla
+br = se utiliza para realizar los saltos de linea
+*/
  $variable1 =  'Pais';
  $variable2 = "Continente";
 

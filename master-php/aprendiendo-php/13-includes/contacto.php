@@ -1,4 +1,15 @@
 <?php
+
+/*
+FUNCIONES UTILIZADAS:
+
+include = Esta funcion inserta codigo en nuestro archivo desde otro archivo
+          sie le rachivo esta dañado o no existe, retorna yn mensaje tipo warning
+div = Se utilia para crear diviciones o blosques del contenido en el documento html
+h2 = Se utiliza para poner titulos de tipo 2
+p = la utilizamos para indicar que es parrafo de texto 
+
+*/ 
 include 'includes/cabecera.php'
 ?>
 

@@ -1,5 +1,20 @@
 <?php
 
+/*
+FUNCIONES UTILIZADAS:
+
+$ = Se utiliza para defirnir varables dentro de php
+array = Es una estrcutura de datos que permiete almacenar multiples elemnetos 
+        en una sola variable.
+for = se utliza para repetri un bloque de isntricciones determinada veces 
+foreach = Es un bluche especial que permiete que permiete recorrer estrucutras que
+          contienen varios elemnetos (matrces, recursos u objetos) si preucupacion del
+         numero de elementos.
+li = Se utiliza para crear item dentro d ela lista 
+ul = se utiliza para definir listas no ordenadas
+         
+*/
+
 /*ARRAYS 
 Una array es una coleccion o un conjunto de datos/valores, bajo un unico nombre.
 Para acceder a esos valores podemos usar un indice numerico a alfanumerico. 
@@ -17,7 +32,7 @@ echo "<hr/>";
 //EJEMPLO # 2
 $cantantes = ['feid','piso 21','Nincky jam','bless'];
 //var_dump($cantantes);
-echo $cantantes[3];
+echo $cantantes[0];
 
 // ARRAY ASOCOATIVOS
 
@@ -51,9 +66,9 @@ echo "<h1>Listado de Cantantes</h1>";
 echo "<ul>";
 
 foreach ($cantantes as $cantantes){
-    echo "<li>".$cantantes."</li>";
+    echo "<li>". $cantantes."</li>";
 
-    echo "</ul>";
+   echo "</ul>";
 }
 
 

@@ -1,4 +1,15 @@
 <?php
+
+/*
+FUNCIONES UTILIZADAS:
+$= $= se utiliza para indicar que se trata de una variable, luego se ponemos el nobre de la variable.  
+echo= permite imprimir por pantalla
+<br/> = permite realizar salto de lineas
+
+
+*/
+
+
 //OPERADORES 
 
 $numero1 = 55;
