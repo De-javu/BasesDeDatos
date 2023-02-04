@@ -85,6 +85,8 @@ footer = Es la parte inferior de una pagina web quedentro incluye informacio de 
     </ul>
 
 </nav>
+
+<div class="clearfix"></div>
     
 </header>
 
