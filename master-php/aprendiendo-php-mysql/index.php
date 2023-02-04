@@ -48,6 +48,17 @@ mysqli_query($conexion, "SET NAMES 'UTF8' ");
       echo $nota['descripcion'].'<br/>';
  }
 
+ //insertar en la base de datos desde PHP
+  $sql = "INSERT INTO notas values(null, 'Notas desde php','Esto es una nota de php','green')";
+  $insert = mysqli_query($conexion, $sql);
+
+  echo "<hr/>";
+  if($insert){
+    echo "DATOS INSERTADOS CORRECTAMENTE";
+  }else{
+    echo "Error: ". mysqli_error($conexion);
+  }
+
 
 
 

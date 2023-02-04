@@ -1,0 +1,93 @@
+/*
+FUNCIONES UTLIZADAS:
+*************************************FUENTES:***************************************
+@font-face = Permite definir una tipografia importante para el uso en un apagina web 
+font-family = Establece el tiepo de eltra con la que se mostrara el texto
+src = Espesifica el recurso o la ruta que contiene a la fuente
+font-weight = Espesifica el peso o grueso de la letra 
+font-style = permite espesificar un estilo de furntes
+**************************************GENERALES***************************************
+* = Permiete realizara seleccion universal 
+margin = Se utiliza para establecer la margen de los cautro lados a las vez 
+padding = Se utiliza para dar relleno a los cautro lados
+font-family = Establece la fuente o tipo de letra con la que se establece el texto
+text-decoration = Se utiliza para definir el sub rayado de un texo.
+
+***************************************body*********************************************
+background = Se utiliza como atajko para definir los valore de fondo en una unica regla
+***************************************.clearfix****************************************
+clear = Espesifica que un elemento debe estar al lado del elemento flotante que lo 
+        preceden o si deben ser movidos
+float = Ubica a los elementos al lado izquierdo o derecho de su contenedor, permitiendo a 
+        los elementos de texto o de linia permanecer a su costado.
+
+
+
+
+
+
+
+
+
+*/
+
+
+/*FUENTES*/
+
+@font-face{
+    font-family:"fajala";
+    src: url(../fonts/fuente.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*GENERALES*/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif, Helvetica, Arial;
+    text-decoration: none;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+body{
+
+    background:url(../img/cubes.png) #F4F4F4;
+}
+
+/*CABECERA*/
+
+#cabecera{
+    width: 100%;
+    height: auto;
+    background: transparent;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+
+#logo{
+float:left;
+width:450px;
+height: 140px;
+}
+
+#logo a{
+    font-family: "fajala", Helvetica;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color:#2979DC;
+    text-shadow: 0px 0px 0px black, 1px 1px 0px black, 2px 2px 0px black;
+    transition: all 500ms;
+}
+
+#logo a:hover{
+cursor: pointer;
+text-shadow: 0px 0px 0px black, -1px 1px 0px black, 2px 2px 0px black;
+}
+
+
+PROXIMA SECCION TOMAR APUNTES DE LOS CAMPOS UTILIZADOS 
