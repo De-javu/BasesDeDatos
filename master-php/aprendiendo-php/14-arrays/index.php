@@ -4,7 +4,7 @@
 FUNCIONES UTILIZADAS:
 
 $ = Se utiliza para defirnir varables dentro de php
-array = Es una estrcutura de datos que permiete almacenar multiples elemnetos 
+array = Es una estructura de datos que permiete almacenar multiples elemenetos 
         en una sola variable.
 for = se utliza para repetri un bloque de isntricciones determinada veces 
 foreach = Es un bluche especial que permiete que permiete recorrer estrucutras que
