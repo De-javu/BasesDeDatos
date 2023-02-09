@@ -8,7 +8,18 @@ COD          CRASH        PES 19
 PUGB         PRINCE OF    MOTO GP 19
              PERSISA     
 
-Cada fila debe ir en un ficher separado(includes).             
+Cada fila debe ir en un ficher separado(includes).          
+
+
+FUNCIONES UTILIZDAS:
+
+$ = Se utiliza para definir una variable
+array = Nos permite definir multiples datos en una variable 
+array_keys = Devuelve todas las claves de un array 
+border = Se utiliza para definir todos lod bordes de ls elementos seleccionados
+table = SE utiliza para mostra un array por medio de una tabla
+require_once = Incluye un fichero de funciones, para que el codigo se vea mas limpio
+              
 
 * /*/
 
@@ -22,7 +33,7 @@ $categorias = array_keys($tabla);
 
 ?>
 
-<table border="1">
+<table border ="1">
    <?php require_once 'ejercicio5/encabezado.php';?>
    <?php require_once 'ejercicio5/primera.php';?>
    <?php require_once 'ejercicio5/segunda.php';?>

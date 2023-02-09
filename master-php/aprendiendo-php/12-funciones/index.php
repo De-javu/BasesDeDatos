@@ -7,7 +7,7 @@ funtion nombreDeMiFuncion($parametro) {
 
 FUNCIONES UTLIZADAS:
 
-funtion = una funcion es un conjunto de instrucciones agrupadas bajo un nombre concreto
+funtion = Una funcion es un conjunto de instrucciones agrupadas bajo un nombre concreto
           y que puede utilizarse solamente invocando a la funcion tanta veces como se desee.
 echo = No spermite imprimir por pantalla
 $ = la utilizamos para definr variables

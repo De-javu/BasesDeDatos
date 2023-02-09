@@ -8,6 +8,28 @@ _ Recorrerlo
 _ Ordenarlo y mostrarlo
 _ Mostrar su longitud 
 _ Buscar algun elemento.
+
+
+FUNCIONES UTILIZADAS:
+
+funtion = Es un conjunto de instrucciones agrupadas bajo un nombre concreto y que 
+          puede utilizarse solamente invocando a la funcion tanta veces como se desee.
+mostrararray = ES el nombre qu le dimos a la funcion 
+$ =  la utilizamos para definir una variable
+foreach = Se utiliza para recorrer un arreglo
+br = se utiliza para los saltos de linea 
+return = Devuelve el control del programa al  modulo que lo envoca 
+array = array = Nos permite definir multiples datos en una variable 
+echo = Nos permiete imprimir por pantalla
+sort = se utiuliza para organizar el array de amnera acsendente
+count = permiete contar los elementos de array 
+isset = Determina si un avraible fue declarada o su valor es nulo 
+array_search = Nos permite buscar un valor dentro de un array 
+empty = Determina si una variable esta vacia 
+if = condicional
+! = Se utiliza para la negacion
+else =  en caso de que no se cumpla el if, se ejecuta el else
+
 */
 
 //FUNCIONES
