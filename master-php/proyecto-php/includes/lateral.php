@@ -43,7 +43,7 @@ clearfix = Esta funcion permiete borrar automaticamente sus elementos secundario
         </form>
     </div>
 
-    <div id="registrer" class="bloque">
+    <div id="register" class="bloque">
         <h3>REGISTRATE</h3>
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre</label>
@@ -62,7 +62,7 @@ clearfix = Esta funcion permiete borrar automaticamente sus elementos secundario
             <input type="password" name ="password"/>
             
 
-            <input type="submit" value="Registrar" />
+            <input type="submit" name="submit" value="Registrar" />
 
 
         </form>

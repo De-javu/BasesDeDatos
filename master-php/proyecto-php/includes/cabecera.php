@@ -23,56 +23,63 @@ require_once =  Se utiliza para incluir archivos externos en los scrip, si el co
 -->
 
 
-<?php require_once 'conexion.php';?>
+<?php require_once 'conexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width= , initial-scale=1.0">
-     <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>BLOG ANDRES</title>
 </head>
+
 <body>
 
-<!-- CABECERA -->
-<header id = "cabecera">
-    <div id ="logo">
-        <a href="index.php">
-            BLOG DE VIDEO JUEGOS
-        </a>
-    </div>
 
-<!-- MENU  -->
 
-<nav id="menu">
-    <ul>
-        <li>
-            <a href="index.php">Inicio</a>
-        </li>
-        <li>
-            <a href="index.php">Categoria 1</a>
-        </li>
-        <li>
-            <a href="index.php">Categoria 2</a>
-        </li>
-        <li>
-            <a href="index.php">Categoria 3</a>
-        </li>
-        <li>
-            <a href="index.php">Categoeria 4</a>
-        </li>
-        <li>
-            <a href="index.php">Sobre Nosotros</a>
-        </li>
-        <li>
-            <a href="index.php">Contacto</a>
-        </li>
-    </ul>
 
-</nav>
+    <!-- CABECERA -->
+    <header id="cabecera">
+        <div id="logo">
+            <a href="index.php">
+                BLOG DE VIDEO JUEGOS
+            </a>
+        </div>
 
-<div class="clearfix"></div>
-    
-</header>
+        <!-- MENU  -->
+
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="index.php">Inicio</a>
+                </li>
+                <li>
+                    <a href="index.php">Categoria 1</a>
+                </li>
+                <li>
+                    <a href="index.php">Categoria 2</a>
+                </li>
+                <li>
+                    <a href="index.php">Categoria 3</a>
+                </li>
+                <li>
+                    <a href="index.php">Categoeria 4</a>
+                </li>
+                <li>
+                    <a href="index.php">Sobre Nosotros</a>
+                </li>
+                <li>
+                    <a href="index.php">Contacto</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div class="clearfix"></div>
+
+    </header>
+
+    <div id="contenedor">

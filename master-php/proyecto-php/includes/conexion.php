@@ -9,9 +9,6 @@ mysqli_query = Combina la ejecucion de sentencias y el almacenamiento de buffer
                de conjuntos de resultados.
 SET NAME utf8 = Esta funcion indica que el diccionarios de palabras y caracteres seran
                 tomas desde la utf8, que permiete al navegador completar Ñ
-
-
-
 -->
 
 
@@ -24,7 +21,7 @@ $usuario = 'root';
 $password = '';
 $basededatos = 'blog_master';
 $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
-mysqli_query($db, "SET NAME 'utf8'");
+mysqli_query($db, "SET NAMES 'utf8'");
 
 
 

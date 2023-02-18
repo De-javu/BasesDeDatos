@@ -21,4 +21,8 @@ id = Se utiliza para  indicar un solo elemento
 
 </footer>
 </body>
+
 </html>
+
+<div class="clearfix"></div>
+</div>
