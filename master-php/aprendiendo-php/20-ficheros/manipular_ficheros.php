@@ -1,4 +1,15 @@
 <?php
+
+/*
+
+FUNCIONES UTILIZADAS:
+
+COPY = Se utiliza ara copiar de una ubicacion a otra
+or die = 
+rename
+unlink
+
+*/
 //Copiar archivo
 //copy('fichero_texto.txt', 'fichero_copiado.txt') or die("ERROR AL COPIAR");
 

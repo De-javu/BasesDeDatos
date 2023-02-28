@@ -4,7 +4,7 @@ $archivo = $_FILES['archivo'];
 $nombre = $archivo['name'];
 $tipo = $archivo['type'];
 
-if($tipo == "image/jpg" || $tipo == "image/jpeg" || $tipo == "image/png"|| $tipo == "image/giff" ){
+if($tipo == "image/jpg" || $tipo == "image/jpeg" || $tipo == "image/png"|| $tipo == "image/pdf" ){
 
   if(!is_dir('images')){
      mkdir('images', 0777);
