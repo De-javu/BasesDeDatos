@@ -60,15 +60,16 @@ else = condicional que se ejecuta si el if no se cumple.
 
 ****************************************
 
-
-
-
+sesion star= 
 
 
 */
+
+session_start();
+
 if (isset($_POST)) {
 
-    //RECOGELOS VALORES DEL FORMULARIOS DE REGISTRO
+    //RECOGE LOS VALORES DEL FORMULARIOS DE REGISTRO
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
     $apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
     $email = isset($_POST['email']) ? $_POST['email'] : false;
@@ -85,7 +86,7 @@ if (isset($_POST)) {
         $nombre_validado = true;
     } else {
         $nombre_validado = false;
-        $errores['nombre'] = "El nombre es valido";
+        $errores['nombre'] = "El nombre no es valido";
 
     }
 
@@ -103,7 +104,7 @@ if (isset($_POST)) {
         $email_validado = true;
     } else {
         $email_validado = false;
-        $errores['email'] = "el email no son validos";
+        $errores['email'] = "el email no es validos";
 
     }
 
@@ -121,8 +122,16 @@ if (isset($_POST)) {
     if(count($errores) == 0){
         $guardar_usuario = true;
 
-    }
+
+
+// INSERTAR USUARIO EN LA TABLA USUARIO DE LA BBDD
+
+    }else
+
+     $_SESSION['errores'] = $errores;
+     header('location: index.php');
      
+
 
 }
 
