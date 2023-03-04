@@ -19,12 +19,23 @@ require_once =  Se utiliza para incluir archivos externos en los scrip, si el co
                  ya fue incluido este no lo incluira de nuevo
 clearfix = Esta funcion permiete borrar automaticamente sus elementos secundarios
 
+*************************************codigo php********************************************
+
+echo =  Se utiliza para imprimir por pantalla 
+if = Se utiliza como condicional, evalua si se cumple ejecuta unas tareas determinadas
+isset = SE utuliza para definir si una variavle fue declara o si su valor es null
+$_SESSION = SE utuliza como array especial que recoje los datois requere de una
+            pagina web o aplicacion 
+endif = Se utiliza para simplificar los corchtes en una if, de esta forma hace el
+        codigo mas limpio y corto 
+
+
 
 -->
 
-<?php require_once 'conexion.php';?>
+<?php require_once 'conexion.php'; ?>
 
-<?php require_once 'includes/helpers.php';?>
+<?php require_once 'includes/helpers.php'; ?>
 <!-- BARRA LATERAL  -->
 
 <aside id="sidebar">
@@ -34,11 +45,11 @@ clearfix = Esta funcion permiete borrar automaticamente sus elementos secundario
         <h3>IDENTIFICAION</h3>
         <form action="login.php" method="POST">
             <label for="email">Email</label>
-            <input type="email" name ="email"/>
+            <input type="email" name="email" />
 
             <label for="password">Contraseña</label>
-            <input type="password" name ="password"/>
-        
+            <input type="password" name="password" />
+
 
             <input type="submit" value="Entrar" />
 
@@ -48,38 +59,52 @@ clearfix = Esta funcion permiete borrar automaticamente sus elementos secundario
 
     <div id="register" class="bloque">
 
-    <?php if(isset($_SESSION['errores'])) : ?>
-        <!-- <?php var_dump($_SESSION['errores']) ; ?> -->
+        <?php if (isset($_SESSION['errores'])): ?>
+            <!-- <?php var_dump($_SESSION['errores']); ?> -->
         <?php endif; ?>
         <h3>REGISTRATE</h3>
+
+        <!-- MOSTRAR ERRORES -->
+
+        <?php if (isset($_SESSION['completado'])): ?>
+            <div class="alerta alerta-exito">
+                <?= $_SESSION['completado'] ?>
+            </div>
+        <?php elseif (isset($_SESSION['errores']['general'])): ?>
+            <div class="alerta alerta-error">
+                <?= $_SESSION['errores']['general'] ?>
+            </div>
+        <?php endif; ?>
+
+
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre</label>
-            <input type="text" name ="nombre"/>
-            <?php echo isset($_SESSION['errores']) 
-            ? mostrarErrores($_SESSION['errores'], 'nombre'):''; 
-            ?> 
-        
+            <input type="text" name="nombre" />
+            <?php echo isset($_SESSION['errores'])
+                ? mostrarErrores($_SESSION['errores'], 'nombre') : '';
+            ?>
+
 
             <label for="apellidos">Apellidos</label>
-            <input type="text" name ="apellidos"/>
-            <?php echo isset($_SESSION['errores']) 
-            ? mostrarErrores($_SESSION['errores'], 'apellidos'):''; 
-            ?> 
-        
+            <input type="text" name="apellidos" />
+            <?php echo isset($_SESSION['errores'])
+                ? mostrarErrores($_SESSION['errores'], 'apellidos') : '';
+            ?>
+
 
             <label for="email">Email</label>
-            <input type="email" name ="email"/>
-            <?php echo isset($_SESSION['errores']) 
-            ? mostrarErrores($_SESSION['errores'], 'email'):''; 
+            <input type="email" name="email" />
+            <?php echo isset($_SESSION['errores'])
+                ? mostrarErrores($_SESSION['errores'], 'email') : '';
             ?>
-            
+
 
             <label for="password">Contraseña</label>
-            <input type="password" name ="password"/>
-            <?php echo isset($_SESSION['errores']) 
-            ? mostrarErrores($_SESSION['errores'], 'password'):''; 
+            <input type="password" name="password" />
+            <?php echo isset($_SESSION['errores'])
+                ? mostrarErrores($_SESSION['errores'], 'password') : '';
             ?>
-            
+
 
             <input type="submit" name="submit" value="Registrar" />
 

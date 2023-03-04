@@ -15,6 +15,8 @@ session_start = Crea una sesion o reanuda la actual basada en un identificador d
 
 ******************************************iniciar sesion*******************************
 
+ session_start = Se encarga de crear una secion o de reanudar la actual basada en identificador
+                 GETR o POST 
 
 -->
 
