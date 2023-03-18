@@ -14,6 +14,22 @@ padding = Se utiliza para dar relleno a los cuatro lados.
 font-family = Establece la fuente o tipo de letra con la que se establece el texto.
 text-decoration = Se utiliza para definir el sub rayado de un texo.
 
+***************************************alerta********************************************
+
+padding = Se utiliza para definir el espacio en los 4 lados del elementoa la vez
+font-size = Se utiliza para espesificar la dimencion de la letra
+color = Se utiliza para definir el color
+background = Se utiliza para definir el fondo del elemnto
+box-shadow = permite proyectar una sombra difuminada desde el marco
+             de casi cualquier elemento 
+margin-bottom = Se utiliza para definir la margen inferior del elemnto
+border-radius = Se utiliza para definir los cuatro puntas del elemnto de forma redonda
+
+******************************************alerta-error***********************************
+
+background =  Se utiliza ara definir los valors del fondo del elemento.
+
+
 ***************************************body*********************************************
 background = Se utiliza como atajo para definir los valore de fondo en una unica regla
 
@@ -87,6 +103,7 @@ linear-gradient = Se utiliza para que el color se vaya degradando suavemente par
                   efecto esperado en el desvanecido del color.
 
 ********************************************#contenedor*************************************
+
 width = Se utiliza para definir el acho del elemento
 min-height = Se utiliza para definiir el minimo de altura en un elemento
 margin = Se Ultiliza para establecer las margenes de los cuatro lados 
@@ -94,11 +111,13 @@ margin-top = Se utiliza para espesificar el margen superior del elemento
 margin-bottom = Se utiliza para definir la margen inferior del elemento 
 
 *******************************************#sidebar*****************************************
-float = Se utiliza para ubicar el elemnto al lado derecho o izquierdo del contenedor
+
+float = Se utiliza para ubicar el elemento al lado derecho o izquierdo del contenedor
 width = Se utiuliza para definir el ancho del elemento 
 min-height= Se utiliza para definir el minimo de altura del elemento
 
 *******************************************.bloque******************************************
+
 display = eSpesifica si un elemento es tratado como un block
 width = Se utiliza para definir el ancho del elemento
 margin = Se utiliza para definir las marguen de los 4 lodos del elemento 
@@ -107,6 +126,7 @@ padding = se utiliza para dar relleno  en los cuatro lados del elemento
 box-shadow = Permite proyectar una sombra difuminada desde el marco de casi cualquier elemnto.
 
 ********************************************label*******************************************
+
 input[type="text"], = Se utiliza para definir los campos a ls que aplicara el estilo
 input[type="email"], = Se utiliza para definir los campos a ls que aplicara el estilo
 input[type="password"] = Se utiliza para definir los campos a ls que aplicara el estilo
@@ -135,8 +155,20 @@ width = Se utiliza para depfinir el ancho del elemento
 margin-top = Se utiliza oara definir el espacio la margen superior
 margin-bottom = Se utiliza para definir el espacio en la marge inferior
 
+.boton =  Es una clase que definimos 
+text-align Se utiliza para alinear el contenido en uno de los 4 valore 
+width = se utiliza para defiir el ancho del area del contenido
+.boton-verde = es una clse que definismos 
+background = Nos permite definir los valore del fondo del elemento
+border-color = Se utiliza para definir el borde del color del elemnto
+
+.boton-naranja = Es una clase que definimos
+background =  Nos permiete definir los valores del fondo del documento del elemnto.
+border-color Se Utiliza para definir el color de los vordes del elemnto.
+
 
 *******************************************#principal**************************************
+
 float = Se utiliza para ubicsra el elemnto vienn sea al lado derecho o izquierdo
 width: Se utiliza para definir el ancho del elemento
 min-height = lo utilizamos para definir la latura minima del elemento
@@ -149,6 +181,7 @@ padding = Se utiliza para dar relleno a los cuatro lados.
 overflow = permite regular la visibilidad de los contenidos que sobre salen 
 
 **********************************************#principal a********************************
+
 color = Nos permiete definir el tono que utilizaremos para el elemento 
 
 ********************************************#principal h1**********************************
@@ -194,6 +227,7 @@ color = tomamos el color que se dese aplicar
 height = Espesifica la altura del elemento 
 padding = Estabelce el area de relleno de los 4 lados del elemento
 text-align = Se utiliza para alinear el texto del elemento
+ # Se tuliza como selector de iD 
 
 */
 
@@ -222,8 +256,23 @@ text-align = Se utiliza para alinear el texto del elemento
 
 body{
 
-    background:url(../img/cubes.png) #F4F4F4;
+    background:url(../img/1.png) #f9f9f9  ;
 }
+
+.alerta{
+    padding: 5 px;
+    font-size: 14px;
+    color: white;
+    background: green;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15 px;
+    border-radius: 2px;
+}
+
+.alerta-error{
+    background: red;
+}
+
 
 /*CABECERA*/
 
@@ -326,6 +375,7 @@ text-shadow: 0px 0px 0px black, -1px 1px 0px black, -2px -2px 0px black;
 .bloque h3{
     margin-top: 15px;
     margin-bottom: 30px;
+    
 }
 
 label,
@@ -345,7 +395,8 @@ input[type="password"] {
       margin-bottom: 10px;    
 }
 input[type ="button"],
-input[type ="submit"]{
+input[type ="submit"],
+.boton{
     display: block;
     border-radius: 2px;
     color: white;
@@ -358,9 +409,29 @@ input[type ="submit"]{
     margin-bottom: 15px;
 
 }
+.boton{
+    text-align: center;
+    width: 130px;
+}
 
+.boton-verde{
+    background: rgb(5, 238, 40);
+    border-color: green;
+}
+.boton-plata{
+    background: rgb(219, 222, 219);
+    border-color: rgba(240, 244, 240, 0.535);
+}
 
+.boton-naranja{
+    background: orange;
+    border-color: rgb(118 78 4);
+}
 
+.boton-rojo{
+    background: red;
+    border-color: rgb(85, 6, 3);
+}
 /*PRINCIPAL*/
 
 #principal{

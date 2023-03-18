@@ -28,6 +28,7 @@ require_once =  Se utiliza para incluir archivos externos en los scrip, si el co
 <?php require_once 'conexion.php'; ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 

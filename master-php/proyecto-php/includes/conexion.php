@@ -1,6 +1,14 @@
 <!--
 
 FUNCIONES UTILIZADAS:
+
+*****************************************CONEXION******************************************
+
+localhost = Esta es la ubicacion de la nuestro sitio web para conexion con la base de datso
+root = Es el nombre adminstrador de la base de datos en php MYadmin
+$password = En este punto iria la calve de ingreso para neutra base de datos,
+            se puede dejar vacio tambien.
+blog_master = ESte el el nombre de la base de datos donde se alojaran los datos recopilasdos
 $ = Se utiliza para definir una variable
 mysqli_connect = Intenta abrir una conexion al servidor MySQL que se esta ejecutando 
                 en equipo_afitrion el cual puede sser el nombre de un equipo 
@@ -16,7 +24,7 @@ session_start = Crea una sesion o reanuda la actual basada en un identificador d
 ******************************************iniciar sesion*******************************
 
  session_start = Se encarga de crear una secion o de reanudar la actual basada en identificador
-                 GETR o POST 
+                 GET o POST 
 
 -->
 

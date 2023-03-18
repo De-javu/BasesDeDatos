@@ -1,8 +1,8 @@
 <!--
 FUNCIONES UTILIZADAS:
 
-aside = Se utiliza como contenedro levemente relevante para el documento.
-class = ES un atributo global que  permiete a css y java scrip sellcionar para aplicar diseño
+aside = Se utiliza como contenedor levemente relevante para el documento.
+class = Es un atributo global que  permiete a css y java scrip sellcionar para aplicar diseño
 h3 = Se utiliza para poner titulos
 clearfix = Es la forma en qu un elemento borra automaticamnete sus elementos secundarios. no necesitas 
            agrgar marcas adicionales.
@@ -29,20 +29,63 @@ $_SESSION = SE utuliza como array especial que recoje los datois requere de una
 endif = Se utiliza para simplificar los corchtes en una if, de esta forma hace el
         codigo mas limpio y corto 
 
+require_once 
+elseif
 
+**************************************BARRA LATERAL*************************************
 
+ if = Se utiliza como condicional 
+ isset = Se utiliza para validar si la variable esta declarada o el valor es null
+ $_SESSION = Se utuliza como array especial que recoje los datois requere de una
+            pagina web o aplicacion 
+div = Cuerpo principal de html
+id= = Se utiliza para identificar un solo elemnto
+class= Se utiliza  para agrupar mas de una elemento
+h3 =  Se utiliza para poner titulos tipo 3
+var_dump = Se utiliza para conocer informacion del tamaño y tipo de datos de la variable
+endif= se utiliza para cerrar el if de forma corta 
+a href= Se utiliza para poner los link a donde nos queremos direccionar
 -->
 
 <?php require_once 'conexion.php'; ?>
 
 <?php require_once 'includes/helpers.php'; ?>
-<!-- BARRA LATERAL  -->
 
+<!-- BARRA LATERAL  -->
 <aside id="sidebar">
+
+    <?php if (isset($_SESSION['usuario'])): ?>
+        <div id="usuario-logueado" class="bloque">
+            <h3>Bienvenido,
+                <?=$_SESSION['usuario']['nombre'].'  '.$_SESSION['usuario']['apellidos']; ?>
+            </h3>
+
+            <!--botones-->
+            <a href="cerrar.php" class="boton boton-verde">Crear entradas</a> <br/>
+            <a href="cerrar.php" class="boton boton-plata">Crear categorias</a> <br/>
+            <a href="cerrar.php" class="boton boton-naranja">Mis datos</a>  <br/>
+            <a href="cerrar.php" class="boton boton-rojo">Cerrar sesion</a> <br/>
+
+       
+
+        </div>
+    <?php endif; ?>
+
+
     <div id="login" class="bloque">
 
 
-        <h3>IDENTIFICAION</h3>
+        <h3>IDENTIFICACION</h3>
+
+        <?php if (isset($_SESSION['error_login'])): ?>
+        <div class="alerta alerta-error">
+            <?=$_SESSION['error_login'];?>
+          
+
+        </div>
+    <?php endif; ?>
+
+
         <form action="login.php" method="POST">
             <label for="email">Email</label>
             <input type="email" name="email" />
