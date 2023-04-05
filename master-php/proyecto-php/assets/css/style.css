@@ -13,6 +13,12 @@ margin = Se utiliza para establecer la margen de los cuatro lados a las vez.
 padding = Se utiliza para dar relleno a los cuatro lados.
 font-family = Establece la fuente o tipo de letra con la que se establece el texto.
 text-decoration = Se utiliza para definir el sub rayado de un texo.
+. = Se utiliza para indicar que vamos a poner estilo a la calse mencionada 
+color =  Nos permiete para poner la tonaliada que deseamos a esta clase
+margin-top = Se utiliza para espesificar la margen superior del elemento
+font-size = Se utiliza para espesificar la dimencion de la letra. 
+
+}
 
 ***************************************alerta********************************************
 
@@ -248,7 +254,6 @@ text-align = Se utiliza para alinear el texto del elemento
     font-family: sans-serif, Helvetica, Arial;
     text-decoration: none; 
 }
-
 .clearfix{
     clear: both;
     float: none;
@@ -271,6 +276,13 @@ body{
 
 .alerta-error{
     background: red;
+}
+
+.fecha{
+    color: rgb(102, 102, 100);
+    margin-top: 5px;
+    font-size: 14px;
+
 }
 
 

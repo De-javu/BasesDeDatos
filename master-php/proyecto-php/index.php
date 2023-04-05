@@ -12,91 +12,79 @@ p = se utiliza para crear parrafos
 require_once =  Se utiliza para incluir archivos externos en los scrip, si el codigo
                  ya fue incluido este no lo incluira de nuevo.
 
+**********************************conseguirUltimasEntradas*********************************
 
-                
+$= Se utiliza para declarar variables
+conseguirUltimasEntradas($db) = Se utiliza para llamarar la funcion creada delos helper
+if = se utiliza como condicional
+! = se utiliza como operador de negacion
+empty = Se encarga de evaluar si la variable esta vacia 
+while = Se utiliza como una sentencia que realiza una accion hasta que se cumpla
+mysqli_fetch_assoc = Devulve un array asociativo que corresponde a la fila recuperada
+article = Se utiliza para dar una vista diferente en bog, con espacios
+class = Se utiliza para identificar, para mas adelanre imponer los estilos 
+a href = Se utiliza para definir la url a donde seredirecciona la pagina
+span = Se utiliza para poner texto un poco diefernte al que ya esta
+<h2> =  Se utiliza para poner titulos de tipo 2
+<p> = Se utiliza para poner en formato parrafo la presentacion de la pagina 
+substr = Se utiliza para indicar el valor de la cadena de texto donde se realizara la 
+         busqueda y segundo y tercero parametros posicion inicial y final de la cadena 
+         a presentar
 
 -->
 
-<?php require_once 'includes/cabecera.php'; ?>
+<?php
+session_start();
+require_once 'includes/cabecera.php';
+require_once 'includes/lateral.php';
+require_once 'includes/helpers.php'; ?>
+?>
 
 
-<?php require_once 'includes/lateral.php'; ?>
+
+
+
 
 <!-- CAJA PRINCIPAL -->
 
 <div id="principal">
+
     <h1>Ultimas entradas</h1>
 
-    <article class="entradas">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno
-                en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado
-                en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de
-                Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
-                PageMaker, el cual incluye versiones de Lorem Ipsum.
-            </p>
-        </a>
+    <?php
+    $entradas = conseguirUltimasEntradas($db);
 
-    </article>
 
-    <article class="entradas">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno
-                en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado
-                en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de
-                Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
-                PageMaker, el cual incluye versiones de Lorem Ipsum.
-            </p>
-        </a>
-    </article>
 
-    <article class="entradas">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno
-                en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado
-                en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de
-                Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
-                PageMaker, el cual incluye versiones de Lorem Ipsum.
-            </p>
-        </a>
+    if (!empty($entradas)):
 
-    </article>
+        while ($entrada = mysqli_fetch_assoc($entradas)):
+            ?>
+            <article class="entrada">
 
-    <article class="entradas">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-                cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
-                galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno
-                en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado
-                en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de
-                Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
-                PageMaker, el cual incluye versiones de Lorem Ipsum.
-            </p>
-        </a>
 
-    </article>
+
+
+                <a href="">
+                    <h2>
+                        <?= $entrada['titulo'] ?>
+                    </h2>
+                    <span class="fecha">
+                        <?= $entrada['categoria'] . ' │ ' . $entrada['fecha'] ?>
+                    </span>
+                    <p>
+                        <?= substr($entrada['descripcion'], 0, 180) . "..." ?>
+                    </p>
+                </a>
+
+            </article>
+
+            <?php
+        endwhile;
+    endif;
+    ?>
+
+
     <div id="ver-todas">
         <a href="">Ver todas las entradas</a>
     </div>

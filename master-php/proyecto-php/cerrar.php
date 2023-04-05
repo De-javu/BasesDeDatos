@@ -12,11 +12,11 @@ header = Se encarga de redireccionar la pagina a otras padinas
 */
 session_start();
 
-if(isset($_SESSION['usuario'])){
-    session_destroy();
+if(isset($_SESSION['usuario'])) ;{
+  session_destroy();
 }
 
-header("Location: index.php");
+header("location: index.php");
 
 
 ?>

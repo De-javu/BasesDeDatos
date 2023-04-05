@@ -1,3 +1,5 @@
+
+
 <!--
 
 FUNCIONES UTILIZADAS:
@@ -29,7 +31,15 @@ session_start = Crea una sesion o reanuda la actual basada en un identificador d
 -->
 
 
+
 <?php
+// Iniciar la sesion
+if(!isset($_SESSION)){
+    session_start();
+   }
+
+
+
 
 // CONEXION
 
@@ -40,8 +50,9 @@ $basededatos = 'blog_master';
 $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
 mysqli_query($db, "SET NAMES 'utf8'");
 
-// Iniciar la sesion
- session_start();
+
+
+
 
 
 

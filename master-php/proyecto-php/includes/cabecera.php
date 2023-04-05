@@ -19,18 +19,31 @@ clearfix = Permite borra lo elemetos secundarios de un formato de forma automati
 require_once =  Se utiliza para incluir archivos externos en los scrip, si el codigo
                  ya fue incluido este no lo incluira de nuevo.
 
+*******************************************MENU*******************************************
+
+$= Se utiliza para definir las una variable 
+conseguirCategorias($db) = Se utuliza para llamara la funcion que tiene la operaciona aejecuta
+while = Se utiliza como un ciclo que se ejecutar hata que sea true
+empty = se encarga de evaluar si una variables esta vacia 
+mysqli_fetch_assoc = Se utiliza para optener una fila de resultado como array asosciativos
+<li> = Se utiliza para listar desordenado 
+a href= Se utiliza para crear el un hipervinculo que nos redigira alguna parte
+endwhile =  el cierre corto del ciclo while.
+
 
 -->
 
 
 
 
-<?php require_once 'conexion.php'; ?>
+<?php
+require_once 'conexion.php'; 
+require_once 'includes/helpers.php';?>
 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -54,24 +67,25 @@ require_once =  Se utiliza para incluir archivos externos en los scrip, si el co
         </div>
 
         <!-- MENU  -->
-
         <nav id="menu">
             <ul>
                 <li>
                     <a href="index.php">Inicio</a>
                 </li>
-                <li>
-                    <a href="index.php">Categoria 1</a>
-                </li>
-                <li>
-                    <a href="index.php">Categoria 2</a>
-                </li>
-                <li>
-                    <a href="index.php">Categoria 3</a>
-                </li>
-                <li>
-                    <a href="index.php">Categoeria 4</a>
-                </li>
+
+                <?php
+                $categorias = conseguirCategorias($db);
+                if (!empty($categorias)):
+                    while ($categoria = mysqli_fetch_assoc($categorias)):
+                        ?>
+                        <li>
+                            <a href="categoria.php?id=<?= $categoria['id'] ?>"><?= $categoria['nombre'] ?></a>
+                        </li>
+                        <?php
+                    endwhile;
+                endif;
+                ?>
+
                 <li>
                     <a href="index.php">Sobre Nosotros</a>
                 </li>

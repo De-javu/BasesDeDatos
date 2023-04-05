@@ -47,18 +47,23 @@ endif= se utiliza para cerrar el if de forma corta
 a href= Se utiliza para poner los link a donde nos queremos direccionar
 -->
 
-<?php require_once 'conexion.php'; ?>
 
-<?php require_once 'includes/helpers.php'; ?>
+
+<?php
+require_once 'includes/conexion.php'; ?>
+
 
 <!-- BARRA LATERAL  -->
 <aside id="sidebar">
+
+
 
     <?php if (isset($_SESSION['usuario'])): ?>
         <div id="usuario-logueado" class="bloque">
             <h3>Bienvenido,
                 <?=$_SESSION['usuario']['nombre'].'  '.$_SESSION['usuario']['apellidos']; ?>
             </h3>
+        
 
             <!--botones-->
             <a href="cerrar.php" class="boton boton-verde">Crear entradas</a> <br/>
@@ -71,7 +76,7 @@ a href= Se utiliza para poner los link a donde nos queremos direccionar
         </div>
     <?php endif; ?>
 
-
+     <?php if(!isset($_SESSION['usuario'])): ?>
     <div id="login" class="bloque">
 
 
@@ -103,7 +108,7 @@ a href= Se utiliza para poner los link a donde nos queremos direccionar
     <div id="register" class="bloque">
 
         <?php if (isset($_SESSION['errores'])): ?>
-            <!-- <?php var_dump($_SESSION['errores']); ?> -->
+        
         <?php endif; ?>
         <h3>REGISTRATE</h3>
 
@@ -117,7 +122,7 @@ a href= Se utiliza para poner los link a donde nos queremos direccionar
             <div class="alerta alerta-error">
                 <?= $_SESSION['errores']['general'] ?>
             </div>
-        <?php endif; ?>
+            <?php endif; ?>
 
 
         <form action="registro.php" method="POST">
@@ -154,8 +159,7 @@ a href= Se utiliza para poner los link a donde nos queremos direccionar
 
         </form>
         <?php borrarErrores(); ?>
+       
     </div>
-
-    <div class="clearfix"></div>
-
+    <?php endif; ?>
 </aside>

@@ -106,11 +106,11 @@ if (isset($_POST)) {
     require_once 'includes/conexion.php';
 
     //INICIAR SECCION
-
-if(!isset($_SESSION)){
-    session_start();
-
-}
+    if(!isset($_SESSION)){
+        session_start();
+    
+    }
+    
 
     
     //RECOGE LOS VALORES DEL FORMULARIOS DE REGISTRO
@@ -148,7 +148,7 @@ if(!isset($_SESSION)){
         $email_validado = true;
     } else {
         $email_validado = false;
-        $errores['email'] = "el email no es validos";
+        $errores['email'] = "El email no es validos";
 
     }
 
@@ -183,9 +183,9 @@ if(!isset($_SESSION)){
             $_SESSION['completado'] = "El registro completado con exito";
 
         } else {
-            $_SESSION['errores']['general'] = "Fallo al guardar el usuraio!!";
+            $_SESSION['errores']['general'] = "Fallo al guardar el usuario!!";
         }
-    } else {
+    }else{
         $_SESSION['errores'] = $errores;
     }
 

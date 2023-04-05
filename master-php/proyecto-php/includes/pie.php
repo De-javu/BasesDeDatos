@@ -14,6 +14,9 @@ id = Se utiliza para  indicar un solo elemento
 <?php require_once 'conexion.php'; ?>
 <!-- PIE DE PAGINA  -->
 
+<div class="clearfix"></div>
+
+
 <footer id="pie">
     <p>
         DESARROLLADO POR ANDRES PARDO &copy; 2023
@@ -24,5 +27,3 @@ id = Se utiliza para  indicar un solo elemento
 
 </html>
 
-<div class="clearfix"></div>
-</div>
