@@ -52,7 +52,7 @@ require_once 'includes/helpers.php'; ?>
     <h1>Ultimas entradas</h1>
 
     <?php
-    $entradas = conseguirUltimasEntradas($db);
+    $entradas = conseguirEntradas($db, true);
 
 
 
@@ -65,7 +65,7 @@ require_once 'includes/helpers.php'; ?>
 
 
 
-                <a href="">
+                <a href="entrada.php?id=<?=$entrada['id']?>">
                     <h2>
                         <?= $entrada['titulo'] ?>
                     </h2>
@@ -86,7 +86,7 @@ require_once 'includes/helpers.php'; ?>
 
 
     <div id="ver-todas">
-        <a href="">Ver todas las entradas</a>
+        <a href="entradas.php">Ver todas las entradas</a>
     </div>
 
 </div>

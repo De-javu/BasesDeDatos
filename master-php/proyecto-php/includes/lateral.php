@@ -66,9 +66,9 @@ require_once 'includes/conexion.php'; ?>
         
 
             <!--botones-->
-            <a href="cerrar.php" class="boton boton-verde">Crear entradas</a> <br/>
-            <a href="cerrar.php" class="boton boton-plata">Crear categorias</a> <br/>
-            <a href="cerrar.php" class="boton boton-naranja">Mis datos</a>  <br/>
+            <a href="crear-entradas.php" class="boton boton-verde">Crear entradas</a> <br/>
+            <a href="crear-categorias.php" class="boton boton-plata">Crear categorias</a> <br/>
+            <a href="mis-datos.php" class="boton boton-naranja">Mis datos</a>  <br/>
             <a href="cerrar.php" class="boton boton-rojo">Cerrar sesion</a> <br/>
 
        

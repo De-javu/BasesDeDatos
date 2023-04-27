@@ -431,8 +431,9 @@ input[type ="submit"],
     border-color: green;
 }
 .boton-plata{
+    color: #909090;
     background: rgb(219, 222, 219);
-    border-color: rgba(240, 244, 240, 0.535);
+    border-color: rgba(34, 35, 34, 0.535);
 }
 
 .boton-naranja{
@@ -457,6 +458,8 @@ input[type ="submit"],
     padding: 20px;
     overflow: hidden;
 }
+
+
 
 #principal a{
     color: #333;
