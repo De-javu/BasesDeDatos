@@ -3,9 +3,16 @@
 
 <?php
 
-$categoria_actual = conseguirCategoria($db, $_GET['id']);
-if(!isset($categoria_actual['id'])){
+$id =$_GET['id'];
+
+
+$entrada_actual = conseguirEntrada($db, $id);
+if(!isset($entrada_actual['id'])){
     header("location: index.php");
+
+    
+    
+
 }
 ?>
 
@@ -13,43 +20,25 @@ if(!isset($categoria_actual['id'])){
 <?php require_once 'includes/lateral.php'; ?>
 
 <div id="principal">
+
+<h1><?=$entrada_actual['titulo']?></h1>
+
+<a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">
+<h2><?=$entrada_actual['categoria']?></h2>
+</a>
+ <p><?=$entrada_actual['descripcion']?></p>
+ <h4><?=$entrada_actual['fecha']?></h4>
+
+
+
+   
    
 
-    <h1>Entradas de <?=$categoria_actual['nombre']?></h1>
-
-    <?php
-    $entradas = conseguirEntradas($db, null, $_GET['id']);
-
-    if (!empty($entradas) && mysqli_num_rows($entradas) >=1 ):
-        while($entrada = mysqli_fetch_assoc($entradas)):
-            ?>
-            <article class="entrada">
-
-                <a href="entrada.php?id=<?=$entrada['id']?>">
-                    <h2>
-                        <?= $entrada['titulo'] ?>
-                    </h2>
-                    <span class="fecha">
-                        <?= $entrada['categoria'] . ' │ ' . $entrada['fecha'] ?>
-                    </span>
-                    <p>
-                        <?= substr($entrada['descripcion'], 0, 180) . "..." ?>
-                    </p>
-                </a>
-
-            </article>
-
-            <?php
-        endwhile;
-    else:
-    ?>
-        <div class = "alerta">No hay entrada en esta categoria</div>
-        <?php endif; ?>
-
-
+    
 
 </div>
 
 
 
 <?php require_once 'includes/pie.php' ?>
+

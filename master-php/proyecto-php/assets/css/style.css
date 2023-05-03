@@ -431,7 +431,7 @@ input[type ="submit"],
     border-color: green;
 }
 .boton-plata{
-    color: #909090;
+    color: #757474;
     background: rgb(219, 222, 219);
     border-color: rgba(34, 35, 34, 0.535);
 }
@@ -439,11 +439,14 @@ input[type ="submit"],
 .boton-naranja{
     background: orange;
     border-color: rgb(118 78 4);
+    color: white;
 }
 
 .boton-rojo{
+    color: white;
     background: red;
     border-color: rgb(85, 6, 3);
+  
 }
 /*PRINCIPAL*/
 

@@ -29,7 +29,7 @@ $conexion = mysqli_connect("localhost", "root","", "phpmysql");
 // Comprobar si la conexion se realizo
 
 if(mysqli_connect_errno()){
-    echo "La conexio  a la base de datos a fallado:" .mysqli__connect_errno();
+    echo "La conexio  a la base de datos a fallado:" . mysqli_connect_errno();
 }else{
     echo "Conexion realizada exitosa mente!!";
 }
