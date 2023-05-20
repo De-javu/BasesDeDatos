@@ -26,15 +26,21 @@ if(!isset($entrada_actual['id'])){
 <a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">
 <h2><?=$entrada_actual['categoria']?></h2>
 </a>
+
+<h4><?=$entrada_actual['fecha']?> | <?=$entrada_actual['usuario'] ?></h4>
+
  <p><?=$entrada_actual['descripcion']?></p>
- <h4><?=$entrada_actual['fecha']?></h4>
 
 
 
-   
-   
+ <?php if(isset($_SESSION["usuario"]) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']):?>
+<a href="editar-entradas.php" class="boton boton-naranja">Editar entradas</a> <br/>
+<a href="borrar-entrada.php?id=<?=$entrada_actual['id']?>" class="boton boton-rojo">Eliminar</a> <br/>
+<?php endif; ?>
 
-    
+
+
+
 
 </div>
 
