@@ -1,17 +1,16 @@
-
 <?php
-
+//  validamos si los datos enviados por metodo POST estas definidos y si la variable no es nula 
 if (isset($_POST)) {
 
+// No encargamos de incluir la conecion a la base de datos por este metodo
 require_once 'includes/conexion.php';
 
 //INICIAR SECCION
+//validamos si la sesios no esta difinida, de ser asi iniciamos la session por el metodo session_star
 if(!isset($_SESSION)){
     session_start();
 
 }
-
-
 
 //RECOGE LOS VALORES DEL FORMULARIOS DE REGISTRO DE ACTULIZACION
 $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
@@ -25,6 +24,8 @@ $errores = array();
 
 //VALIDAR LOS DATOS ANTES DE GUARDARLOS EN LA BASE DE DATOS
 
+// en esta parte nos encargamos de validar los datos crfeamos diferentes filtros para cada campo de esta forma se protege 
+// nuestra base de datos 
 //VALIDAR NOMBRE
 if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)) {
     $nombre_validado = true;
@@ -62,7 +63,9 @@ if (count($errores) == 0) {
     $guardar_usuario = true;
 
     //COMPROBAR SI EL EMAIL YA EXISTE
-
+// con esta funcion validamos si el email ya esta registrando en la base de datos 
+// validando la conexio de usuario de esta forma  se valida que el email es el mismo que el del usuario y el no esta vacio
+// se procedera a la cosnulta para actuañlizar los datos   
     $sql = "SELECT id, email 
     FROM usuarios
     WHERE email = '$email'";
@@ -70,9 +73,17 @@ if (count($errores) == 0) {
     $isset_user = mysqli_fetch_assoc($isset_email);
 
 
+
+
    if($isset_user['id'] == $usuario['id'] || empty($isset_user)) { 
     
     // ACTUALIZAR USUARIO EN LA TABLA USUARIO DE LA BBDD
+
+    // // Esta es la funcion que realiza toda la actualizacion de la base de datos  se crea la conssulta de actualizacion
+    // si el id de suario es igual a id de session se crea la consulta gardara los datos en la session 
+    // mostrara un mensaje de datos completos si no se tiene problema
+    // de lo contrario mostrara la lerta de errro
+
     $usuario = $_SESSION['usuario'];
 
     $sql = "UPDATE usuarios SET
@@ -104,7 +115,7 @@ if (count($errores) == 0) {
     $_SESSION['errores'] = $errores;
 }
 
-
+// Redirecciona por ultimo a la pagina q se desea
 
 header('location: mis-datos.php');
 
@@ -210,4 +221,109 @@ if =  Se utiliza como condicinal si este se cumple se ejecutara una accion
 else =  Se evaluara en caso de que el condicional if no se cumpla.
 header = Se encarga de redirigirnos a la ruta que se desee
 
--->
+*************************************************  CODIGO COMPLETO  *************************************************-->
+
+<?php
+
+if (isset($_POST)) {
+
+require_once 'includes/conexion.php';
+
+//INICIAR SECCION
+if(!isset($_SESSION)){
+    session_start();
+
+}
+
+//RECOGE LOS VALORES DEL FORMULARIOS DE REGISTRO DE ACTULIZACION
+$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
+$apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
+$email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;
+
+
+
+//ARRAY DE ERRORES
+$errores = array();
+
+//VALIDAR LOS DATOS ANTES DE GUARDARLOS EN LA BASE DE DATOS
+
+//VALIDAR NOMBRE
+if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)) {
+    $nombre_validado = true;
+} else {
+    $nombre_validado = false;
+    $errores['nombre'] = "El nombre no es valido";
+
+}
+
+//VALIDAR APELLIDO
+if (!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)) {
+    $apellidos_validado = true;
+} else {
+    $apellidos_validado = false;
+    $errores['apellidos'] = "Los apellidos no son validos";
+
+}
+
+//VALIDAR EL EMAIL
+if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $email_validado = true;
+} else {
+    $email_validado = false;
+    $errores['email'] = "El email no es validos";
+
+}
+
+
+
+
+$guardar_usuario = false;
+
+if (count($errores) == 0) {
+    $usuario = $_SESSION['usuario'];
+    $guardar_usuario = true;
+
+    //COMPROBAR SI EL EMAIL YA EXISTE
+
+    $sql = "SELECT id, email 
+    FROM usuarios
+    WHERE email = '$email'";
+    $isset_email = mysqli_query($db, $sql);
+    $isset_user = mysqli_fetch_assoc($isset_email);
+
+
+   if($isset_user['id'] == $usuario['id'] || empty($isset_user)) { 
+    
+    // ACTUALIZAR USUARIO EN LA TABLA USUARIO DE LA BBDD
+    $usuario = $_SESSION['usuario'];
+
+    $sql = "UPDATE usuarios SET
+    nombre = '$nombre',
+    apellidos = '$apellidos',
+    email = '$email'
+    WHERE id = " . $usuario['id'];
+    $guardar = mysqli_query($db, $sql);
+
+    if($guardar)
+    $_SESSION['usuario']['nombre'] = $nombre;
+    $_SESSION['usuario']['apellidos'] = $apellidos;
+    $_SESSION['usuario']['email'] = $email;
+
+
+        $_SESSION['completado'] = "Tus datos se han actualizado con exito";
+
+    } else{
+        $_SESSION['errores']['general'] = "Fallo al guardar al actulizar tus datos !!";
+    }
+   }else{
+    $_SESSION['errores']['general'] = "El usuario ya existe !!";
+    
+   }  
+}else{
+    $_SESSION['errores'] = $errores;
+}
+
+header('location: mis-datos.php');
+
+
+?>

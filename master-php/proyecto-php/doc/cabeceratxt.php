@@ -1,7 +1,16 @@
+<!-- En este fichero se realiza la visualizacion de la parte superior de nuestra pagina 
+lo que corresponde a la cabecera y al logo y menu---->
+
 <?php
+//lo primero que se realiza es la son los includes por medio de requiere_once para la conexion
+//a la base de datos y a la carpeta helper que lleva la logica de consultas y funciones
 require_once 'conexion.php'; 
 require_once 'includes/helpers.php';?>
 
+<!--
+ Se configura el html con los parametros q se desea y este sera el que se incluire en las 
+demas vistas de ficheros
+-->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,10 +24,9 @@ require_once 'includes/helpers.php';?>
 
 <body>
 
-
-
-
     <!-- CABECERA -->
+ <!-- En esta parte se realiza la seleccion de la cabeceera desdee el html y se asignan los id
+ que se pondran ajustar desde los id, logo la ruta y el titulo por medio del elemnto a de url    -->
     <header id="cabecera">
         <div id="logo">
             <a href="index.php">
@@ -27,12 +35,20 @@ require_once 'includes/helpers.php';?>
         </div>
 
         <!-- MENU  -->
+<!-- En esta parte del codigo vamos a crear la seleccion del menu para el cual se utiliza
+la etiqueta nav y los elemntos para listar ordenadas  -->
         <nav id="menu">
             <ul>
                 <li>
                     <a href="index.php">Inicio</a>
                 </li>
-
+<!-- En esta parte del codigo vamos alistar las categorias que tenemos en nuetsra pagina
+para ellos utilizamos codigo php crreamos la $categorias y llamamon la funcion de consulta 
+creada el el fichero de helpers
+*creamos un condicional eñl cual nos valiada si la variable no $categorias no esta vacia
+de cumplirce la condicion utilizamos el metodo while el cuaal recorrera co la funcion mysqli_fetch_assoc
+que es un arra asosciativo y nos listara todas las categorias.
+despues de ello pasamos el link y pasamo id por url e imprimimos valor id con el nombre  -->
                 <?php
                 $categorias = conseguirCategorias($db);
                 if (!empty($categorias)):

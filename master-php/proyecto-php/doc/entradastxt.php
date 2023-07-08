@@ -1,6 +1,7 @@
 <!-- CAJA PRINCIPAL -->
 <?php
-
+// Iniciamos arrancando con la session star 
+// luego llamamos a los ficheros que ya tenemos listos para visualizar en nuetsra pagina por medio del require_once
 session_start();
 require_once 'includes/cabecera.php';
 require_once 'includes/lateral.php';
@@ -11,18 +12,18 @@ require_once 'includes/helpers.php'; ?>
     <h1>Todas entradas</h1>
 
     <?php
+// llamamos la funcion conseguirEntradas quese encarga de realizar la logica de consulta a la base de datos 
     $entradas = conseguirEntradas($db);
 
-
-
+// utilizamos un if el cual se encarga de validar si la variable $emtrada no esta vacia, de cumplir la 
+// condicion se ejecuta el codigo dentro 
     if (!empty($entradas)):
 
+// creamos un cilco while que se encargara de recorrer las entradas no mostrara por medio de un array asiciativo 
+// los parametros que se desean dentro de la entrada, id, titulo, fecha, categoria, descripcion
         while ($entrada = mysqli_fetch_assoc($entradas)):
             ?>
             <article class="entrada">
-
-
-
 
                 <a href="entrada.php?id=<?=$entrada['id']?>">
                     <h2>
@@ -42,12 +43,8 @@ require_once 'includes/helpers.php'; ?>
         endwhile;
     endif;
     ?>
-
-
-
 </div>
-
-
+<!-- por ultimo incluimos el pie de lapagina  -->
 
 <?php require_once 'includes/pie.php' ?>
 
@@ -75,4 +72,46 @@ substr = Devuleve caracteres del vaor de cadena
 endwhile = Se utiliza para bridar cierre al while de forma corta sin utiliza corchetes
 endif = Se utiliza para bridar cierre al if de forma corta sin utlizar corchetes
 
--->
+*************************************************  CODIGO  *************************************************************-->
+
+<!-- CAJA PRINCIPAL -->
+<?php
+
+session_start();
+require_once 'includes/cabecera.php';
+require_once 'includes/lateral.php';
+require_once 'includes/helpers.php'; ?>
+
+<div id="principal">
+
+    <h1>Todas entradas</h1>
+
+    <?php
+    $entradas = conseguirEntradas($db);
+
+    if (!empty($entradas)):
+
+        while ($entrada = mysqli_fetch_assoc($entradas)):
+            ?>
+            <article class="entrada">
+
+                <a href="entrada.php?id=<?=$entrada['id']?>">
+                    <h2>
+                        <?= $entrada['titulo'] ?>
+                    </h2>
+                    <span class="fecha">
+                        <?= $entrada['categoria'] . ' │ ' . $entrada['fecha'] ?>
+                    </span>
+                    <p>
+                        <?= substr($entrada['descripcion'], 0, 180) . "..." ?>
+                    </p>
+                </a>
+
+            </article>
+
+            <?php
+        endwhile;
+    endif;
+    ?>
+</div>
+<?php require_once 'includes/pie.php' ?>

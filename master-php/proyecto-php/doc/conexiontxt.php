@@ -1,20 +1,34 @@
+<!--
+En este fichero la idea es realizar la conecion a la base de datos unicamente
+se realizan los ajustes necesarios.
+-->
+
 <?php
 // Iniciar la sesion
+// En esta primera parte utilizamos un if para valiadar que la seccion no esta iniciada de
+// de no estarlo se utiliza la funcion sesion_start para inicarlo.
 if(!isset($_SESSION)){
     session_start();
    }
+//**************************************************************************************/   
 
 // CONEXION
-
+//Se crea una variable para capturar cada uno de los campos que solicita la base de datos para crear la conexion
 $servidor = 'localhost';
 $usuario = 'root';
 $password = '';
 $basededatos = 'blog_master';
+
+//Despues se crea la funcion mysqli_connet en la cual se captura con la varible que contiene
+// los datos de la base de datos que anterirmente se capturaron.
 $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
+
+// En estte fragmento decodigo realizamos una coslta a la base de datos la cual le pasamos 
+// los datos de la bade de tado $db y le pasamos una funcion especial la cula nos realizara
+// una codificacion que servira para que se interprete la n Ñ y bastante de los parametros latinos 
 mysqli_query($db, "SET NAMES 'utf8'");
 
 ?>
-
 
 <!--
 
@@ -45,3 +59,22 @@ session_start = Crea una sesion o reanuda la actual basada en un identificador d
                  GET o POST 
 
 -->
+
+<!--************************************CODIGO**************************************** -->
+
+<?php
+// Iniciar la sesion
+if(!isset($_SESSION)){
+    session_start();
+   }
+
+// CONEXION
+
+$servidor = 'localhost';
+$usuario = 'root';
+$password = '';
+$basededatos = 'blog_master';
+$db = mysqli_connect($servidor, $usuario, $password, $basededatos);
+mysqli_query($db, "SET NAMES 'utf8'");
+
+?>

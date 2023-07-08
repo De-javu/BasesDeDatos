@@ -3,17 +3,13 @@ if (isset($_POST)) {
     //Conexion a la base de datos
     require_once 'includes/conexion.php';
   
-
     $titulo = isset($_POST['titulo']) ? mysqli_real_escape_string($db, $_POST['titulo']) : false;
     $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($db, $_POST['descripcion']) : false;
     $categoria = isset($_POST['categoria']) ? (int)$_POST['categoria'] : false;
     $usuario = $_SESSION['usuario']['id'];
-
    
     // Validacion
     $errores = array();
-
-    
  
 
 

@@ -99,6 +99,10 @@ function conseguirEntradas($conexion, $limit = null, $categoria = null, $busqued
          
      }
 
+     
+
+
+
     if ($limit) {
         $sql = " LIMIT 4 ";
     }

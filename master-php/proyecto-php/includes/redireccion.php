@@ -1,3 +1,14 @@
+
+<?php
+if(!isset($_SESSION)){
+    session_start();
+}
+
+if(!isset($_SESSION['usuario'])) {
+    header("location: index.php");
+}
+?>
+
 <!-- 
 FUNCIONES UTULIZADAS:
 
@@ -9,14 +20,3 @@ $_SESSIO = Es un array especial, que guarda la conexion entre las diferentes pag
 session_start() = Renida la seccion automaticamnete para cada pagina 
 header =  Se encarga de redireccionar a la pagina que se desee.
  -->
-
-<?php
-
-if(!isset($_SESSION)){
-    session_start();
-}
-
-
-if(!isset($_SESSION['usuario'])) {
-    header("location: index.php");
-}
