@@ -65,7 +65,7 @@ submit = Se utiliza para crear un boton el cual se encarga de enviar la informac
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -108,6 +108,7 @@ submit = Se utiliza para crear un boton el cual se encarga de enviar la informac
 
     <label for="numero">Numero: </label>
     <p><input type="number" name ="numero" /></p>
+
 
     <label for="pass">Contraseña: </label>
     <p><input type="password" name ="pass"></p>

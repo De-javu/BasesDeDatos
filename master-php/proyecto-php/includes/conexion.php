@@ -4,15 +4,26 @@ if(!isset($_SESSION)){
     session_start();
    }
 
-// CONEXION
+ // CONEXION REMOTA  
 
+   $servidor = 'localhost';
+   $usuario = 'u304497773_andres';
+   $password = 'Musika12345-*/';
+   $basededatos = 'u304497773_blog_master';
+   $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
+   mysqli_query($db, "SET NAMES 'utf8'");
+   
+
+
+// CONEXION LOCAL
+/*
 $servidor = 'localhost';
 $usuario = 'root';
 $password = '';
 $basededatos = 'blog_master';
 $db = mysqli_connect($servidor, $usuario, $password, $basededatos);
 mysqli_query($db, "SET NAMES 'utf8'");
-
+*/
 ?>
 
 
